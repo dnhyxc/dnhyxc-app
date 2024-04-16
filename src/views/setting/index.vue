@@ -46,11 +46,11 @@ const goBack = () => {
       .el-tabs__nav-wrap,
       .el-tabs__nav-scroll,
       .el-tabs__nav {
-        border-top-left-radius: 28px;
+        border-top-left-radius: 35px;
       }
       .el-tabs__item {
         &:first-child {
-          border-top-left-radius: 28px;
+          border-top-left-radius: 32px;
         }
       }
 

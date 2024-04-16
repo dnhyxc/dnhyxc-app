@@ -80,23 +80,44 @@ const goBack = () => {
     }
 
     .content {
+      position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background-color: $content-bg;
-      border-top-left-radius: 20px;
-      // clip-path: xywh(0 5px 100% 100% round 15% 0);
-      border-top-left-radius: 5%;
-      // box-shadow: 0 0 6px $primary inset;
-      // box-shadow: 2px 2px 5px $primary inset;
+      border-top-left-radius: 35px;
+      border: 5px solid $content-bg;
+      border-bottom: none;
+      border-right: none;
       box-sizing: border-box;
       padding: 5px 0 0 5px;
 
-      .page {
-        border-top-left-radius: 18px;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        // padding: 5px 0 0 5px;
+        //background-color: $content-bg;
+        //clip-path: polygon(
+        //  -100vmax -100vmax,
+        //  100vmax -100vmax,
+        //  100vmax 100vmax,
+        //  -100vmax 100vmax,
+        //  -100vmax -100vmax,
+        //  6px 6px,
+        //  6px 100%,
+        //  100% 100%,
+        //  100% 6px,
+        //  6px 6px
+        //);
+      }
+
+      .page {
+        position: relative;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
         box-sizing: border-box;
         background-color: transparent;
       }
