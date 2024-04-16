@@ -5,7 +5,7 @@
  * index.vue
 -->
 <template>
-  <el-aside :class="`${checkOS() === 'mac' && 'mac-aside-wrap'} aside-wrap`" width="170">
+  <el-aside :class="`${checkOS() === 'mac' && 'mac-aside-wrap'} aside-wrap`" width="200">
     <div class="menu-list">
       <div class="header">
         <Icon class-name="icon-hd" size="40px" padding="0 10px 4px 0" background="" drag="drag" />
@@ -48,12 +48,10 @@ const goBack = () => {
 
 .aside-wrap {
   -webkit-app-region: drag;
-  border-right: 1px solid var(--border-color);
 
   .menu-list {
-    width: 170px;
+    width: 200px;
     height: 100%;
-    background-color: var(--background);
 
     .header {
       display: flex;

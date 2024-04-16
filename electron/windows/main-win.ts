@@ -1,26 +1,26 @@
 // @ts-ignore
 import path from 'path';
 import { ipcMain, BrowserWindow, IpcMainEvent, app } from 'electron';
-import { globalInfo } from '../constant';
-import { getIconPath, isMac } from '../utils';
+import { globalInfo, PORT } from '../constant';
+import { getIconPath, isMac, isDev } from '../utils';
 
 let timer: ReturnType<typeof setTimeout> | null = null;
 
 export const createMainWindow = () => {
   globalInfo.mainWin = new BrowserWindow({
-    width: 800,
-    height: 550,
-    minWidth: 800,
-    minHeight: 550,
+    width: 1080,
+    height: 750,
+    minWidth: 1080,
+    minHeight: 750,
     titleBarStyle: 'hidden',
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true, // 这里需要设置为 true， 否则导入 preload.js 会报错
-      preload: path.join(__dirname, './preload.js'),
+      preload: path.join(__dirname, './preload.js')
       // 如果是开发模式可以使用devTools 调试
       // devTools: process.env.NODE_ENV === 'development' || config.build.openDevTools,
       // 在macos中启用滚动回弹效果
-      scrollBounce: process.platform === 'darwin'
+      // scrollBounce: process.platform === 'darwin'
     },
     // 设置 transparent 会导致 win.restore() 失效
     // transparent: true, // 当transparent为true会导致win.restore()无效
@@ -42,9 +42,12 @@ export const createMainWindow = () => {
     });
   }
 
-  globalInfo.mainWin?.webContents.openDevTools();
-
-  globalInfo.mainWin?.loadURL('http://localhost:5173');
+  if (!isDev) {
+    globalInfo.mainWin?.loadURL(`http://localhost:${PORT}`);
+  } else {
+    globalInfo.mainWin?.webContents.openDevTools();
+    globalInfo.mainWin?.loadURL(`http://localhost:${PORT}`);
+  }
 
   // 关闭按钮处理 - Mac是点击最小化
   globalInfo.mainWin?.on('closed', () => {

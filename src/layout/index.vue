@@ -6,7 +6,7 @@
         <Header />
         <div class="content">
           <RouterView v-if="isRouterAlive" v-slot="{ Component }">
-            <component :is="Component" />
+            <component :is="Component" class="page" />
           </RouterView>
         </div>
       </el-main>
@@ -49,6 +49,14 @@ const goBack = () => {
   flex-direction: column;
   width: 100%;
   height: 100vh;
+  background-color: transparent;
+  box-sizing: border-box;
+  background-color: var(--background);
+  background-image: var(--bg-image-url);
+  background-position: var(--bg-position);
+  background-repeat: var(--bg-repeat);
+  background-size: var(--bg-img-size);
+  animation: var(--bg-animation);
 
   .el-main {
     display: flex;
@@ -61,11 +69,10 @@ const goBack = () => {
     .header-warp {
       display: flex;
       align-items: center;
-      padding: 8px;
+      padding: 8px 8px 8px 25px;
       height: 60px;
       box-sizing: border-box;
       -webkit-app-region: drag;
-      border-bottom: 1px solid var(--border-color);
 
       .back {
         -webkit-app-region: no-drag;
@@ -76,6 +83,23 @@ const goBack = () => {
       width: 100%;
       height: 100%;
       overflow: hidden;
+      background-color: $content-bg;
+      border-top-left-radius: 20px;
+      // clip-path: xywh(0 5px 100% 100% round 15% 0);
+      border-top-left-radius: 5%;
+      // box-shadow: 0 0 6px $primary inset;
+      // box-shadow: 2px 2px 5px $primary inset;
+      box-sizing: border-box;
+      padding: 5px 0 0 5px;
+
+      .page {
+        border-top-left-radius: 18px;
+        width: 100%;
+        height: 100%;
+        // padding: 5px 0 0 5px;
+        box-sizing: border-box;
+        background-color: transparent;
+      }
     }
   }
 }

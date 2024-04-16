@@ -1,4 +1,6 @@
-import {BrowserWindow, Tray} from 'electron';
+import { BrowserWindow, Tray } from 'electron';
+
+export const PORT = 9012;
 
 export const globalInfo: {
   mainWin: BrowserWindow | null;
@@ -8,5 +10,5 @@ export const globalInfo: {
 } = {
   mainWin: null,
   tray: null,
-  willQuitApp: false,
+  willQuitApp: false
 };

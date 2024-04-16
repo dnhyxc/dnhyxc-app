@@ -1,15 +1,15 @@
 // @ts-ignore
 import path from 'path';
-import {app, Tray} from 'electron';
-import {createMainWindow} from './windows/main-win';
-import {isDev, isMac, getIconPath, createContextMenu} from './utils';
-import {globalInfo} from './constant';
+import { app, Tray } from 'electron';
+import { createMainWindow } from './windows/main-win';
+import { isDev, isMac, getIconPath, createContextMenu } from './utils';
+import { globalInfo, PORT } from './constant';
 
 // 屏蔽警告
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
 
 // 解决 http 下无法使用媒体api（navigator.mediaDevices.getUserMedia）的问题
-app.commandLine.appendSwitch('unsafely-treat-insecure-origin-as-secure', 'http://localhost:5173');
+app.commandLine.appendSwitch('unsafely-treat-insecure-origin-as-secure', `http://localhost:${PORT}`);
 
 // 限制只能启动一个应用
 const gotTheLock = app.requestSingleInstanceLock();
@@ -64,7 +64,6 @@ app.on('activate', () => {
     globalInfo.mainWin?.show();
   }
 });
-
 
 // 只有显式调用quit才退出系统，区分MAC系统程序坞退出和点击X关闭退出
 app.on('before-quit', () => {

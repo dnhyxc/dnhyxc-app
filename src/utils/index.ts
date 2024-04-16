@@ -1,3 +1,5 @@
+export { modifyTheme } from './theme';
+
 // 判断系统类型
 export const checkOS = () => {
   const agent = navigator.userAgent.toLowerCase();
