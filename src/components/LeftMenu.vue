@@ -17,7 +17,7 @@
         :class="`menu-item ${route.path === menu.path && 'active'}`"
         @click="onClick(menu)"
       >
-        <Icon :class-name="`${menu.icon} menu-icon`" padding="0 10px 0 0" size="20px" color="#000" />
+        <Icon :class-name="`${menu.icon} menu-icon`" padding="0 10px 0 0" size="20px" color="#000" background="" />
         <span class="menu-text">{{ menu.name }}</span>
       </div>
     </div>
@@ -91,14 +91,14 @@ const onJump = (link: string) => {
       padding: 0 8px;
 
       .icon-hd {
-        @include textLg;
+        @include textLgActive;
       }
 
       .name {
         font-size: 21px;
         font-weight: 700;
         padding-bottom: 9px;
-        @include textLg;
+        @include textLgActive;
       }
     }
 
@@ -123,6 +123,7 @@ const onJump = (link: string) => {
 
       &:hover {
         background: var(--green-1);
+
         .menu-icon,
         .menu-text {
           @include clearTextLg();
@@ -160,6 +161,7 @@ const onJump = (link: string) => {
       padding-left: 8px;
       @include textLgActive;
       cursor: pointer;
+      @include clickNoSelectText;
     }
 
     .motto {
@@ -169,6 +171,7 @@ const onJump = (link: string) => {
       padding-left: 8px;
       z-index: 9;
       @include textLgActive;
+      @include clickNoSelectText;
     }
 
     .link {
@@ -215,6 +218,7 @@ const onJump = (link: string) => {
     height: 60px;
     border-radius: 10px;
     cursor: pointer;
+    @include clickNoSelectText;
   }
 }
 

@@ -72,6 +72,7 @@ const goBack = () => {
   .left {
     display: flex;
     align-items: center;
+    @include textLgActive;
 
     .back {
       -webkit-app-region: no-drag;
@@ -88,6 +89,7 @@ const goBack = () => {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include textLgActive;
   }
 }
 

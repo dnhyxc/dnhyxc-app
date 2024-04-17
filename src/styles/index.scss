@@ -35,7 +35,7 @@
 
 // 选中的菜单颜色
 @mixin textLgActive($lg-active-colors: $lg-active-colors) {
-  background-image: $lg-active-colors;
+  background-image: var(--lg-active-colors);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

@@ -26,8 +26,10 @@ const imageStyles = {
   // 主题背景颜色
   '--background': 'transparent',
   '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
+  '--bg-img-size': 'cover',
   '--green-1': 'rgb(225, 252, 201, 0.3)',
-  '--tab-active': 'rgba(255, 255, 255, 0.3)'
+  '--tab-active': 'rgba(255, 255, 255, 0.3)',
+  '--lg-active-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)'
 };
 
 // 公共属性
@@ -42,7 +44,8 @@ const removeStyle = {
   '--bg-image-url': 'none',
   '--bg-animation': 'none',
   '--green-1': 'rgb(225, 252, 201, 0.85)',
-  '--tab-active': 'rgba(255, 255, 255, 0.6)'
+  '--tab-active': 'rgba(255, 255, 255, 0.6)',
+  '--lg-active-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)'
 };
 
 const themeTypes = {
@@ -72,16 +75,31 @@ const themeTypes = {
   },
 
   // 图片背景
-  cloud: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${CLOUD})` }, // 云巅
+  cloud: {
+    ...imageStyles,
+    ...fontStyle,
+    '--bg-image-url': `url(${CLOUD})`,
+    '--lg-active-colors': 'linear-gradient(-45deg, #7ab6de 0%, #6e5ef2 100%)'
+  }, // 云巅
   beauty: {
     ...imageStyles,
     '--bg-image-url': `url(${BEAUTY})`,
     '--content-border-bg': 'rgb(237, 242, 232, 0.25)',
     '--green-1': 'rgb(225, 252, 201, 0.1)',
-    '--tab-active': 'rgba(0, 0, 0, 0.25)'
-  }, // 动漫
-  lateralFace: { ...imageStyles, '--bg-image-url': `url(${HEAD_IMG})` }, // 侧脸
-  fresh: { ...imageStyles, '--bg-image-url': `url(${FRESH})` }, // 小清新
+    '--tab-active': 'rgba(0, 0, 0, 0.25)',
+    '--lg-active-colors': 'linear-gradient(-45deg, #f3ff00 0%, #377500 100%)'
+  },
+  // 动漫
+  lateralFace: {
+    ...imageStyles,
+    '--bg-image-url': `url(${HEAD_IMG})`
+  }, // 侧脸
+  fresh: {
+    ...imageStyles,
+    '--bg-image-url': `url(${FRESH})`,
+    '--lg-active-colors':
+      'linear-gradient(45deg, #89ff00, #acf500, #c7ea00, #dcdf00, #edd400, #f4c900, #fabd00, #ffb100, #ffa200, #ff9300, #ff8300, #ff7200)'
+  }, // 小清新
   ShaoSiming: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG1})` }, // 少司命
   locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` }, // 三体智子
   island: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG4})` }, // 海岛
