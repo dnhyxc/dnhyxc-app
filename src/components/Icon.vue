@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<IProps>(), {
   color: '',
   size: '16px',
   padding: '10px',
-  background: 'var(--hover-bg)',
+  background: 'var(--content-border-bg)',
   drag: 'no-drag'
 });
 
@@ -46,6 +46,7 @@ const className = computed(() => {
 
   &:hover {
     background: v-bind('props.background');
+    color: var(--active);
   }
 }
 </style>

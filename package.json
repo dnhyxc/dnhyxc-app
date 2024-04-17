@@ -16,6 +16,7 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "electron-store": "^8.2.0",
     "element-plus": "^2.7.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
@@ -49,10 +50,10 @@
     "vue-tsc": "^2.0.6"
   },
   "build": {
-    "appId": "com.electron.desktop",
-    "productName": "template",
+    "appId": "9116:15.50.43.101//:http",
+    "productName": "墨客",
     "asar": true,
-    "copyright": "Copyright © 2023 moke",
+    "copyright": "Copyright © 2023 dnhyxc",
     "directories": {
       "output": "app/"
     },

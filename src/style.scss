@@ -1,4 +1,4 @@
-@import '@/styles/color.scss';
+@import '@/styles/index.scss';
 
 body {
   margin: 0;
@@ -12,8 +12,10 @@ body {
   --background: #fff;
   --font-1: #111;
   --border-color: #f5f7f9;
+  --primary: #68a235;
+  --success: #88c957;
   --active: green;
-  --hover-color: #559a30;
+  --hover-color: rgba(237, 242, 232, 0.85);
   --hover-bg: #f5f7f9;
   // 背景图片
   --bg-image-url: none;
@@ -25,6 +27,12 @@ body {
   --backdrop-filter: initial;
   // 背景动画
   --bg-animation: none;
+  --content-border-bg: rgb(237, 242, 232, 0.6);
+  --lg-active-colors: linear-gradient(-45deg, #30cfd0 0%, #330867 100%);
+  --green-1: rgb(225, 252, 201, 0.65);
+  --green-2: rgba(238, 250, 229, 0.35);
+  --green-3: rgb(224, 249, 206, 0.75);
+  --tab-active: rgba(0, 0, 0, 0.2);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

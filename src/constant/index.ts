@@ -9,8 +9,11 @@ import SUN from '@/assets/images/sun.jpg';
 import SNOW from '@/assets/images/snow.jpg';
 import BEAUTY from '@/assets/images/beauty.jpg';
 
+export const DOMAIN = 'http://101.43.50.15:9116';
+
 export { IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG, SNOW, CLOUD, SEA, FRESH, SUN };
 
+// 左侧菜单
 export const MENU_LIST = [
   {
     name: '首页',
@@ -21,20 +24,60 @@ export const MENU_LIST = [
     active: 'icon-home'
   },
   {
-    name: '设置',
-    key: 'setting',
-    path: '/setting',
+    name: '文章分类',
+    key: 'classify',
+    path: '/classify',
+    icon: 'icon-flower',
+    fillIcon: 'icon-flower',
+    active: 'icon-flower'
+  },
+  {
+    name: '文章标签',
+    key: 'tag',
+    path: '/tag',
     icon: 'icon-Settings',
     fillIcon: 'icon-Settings',
     active: 'icon-Settings'
   },
   {
-    name: '登录',
-    key: 'login',
-    path: '/login',
-    icon: 'icon-flower',
-    fillIcon: 'icon-flower',
-    active: 'icon-flower'
+    name: '时间轴',
+    key: 'timeline',
+    path: '/timeline',
+    icon: 'icon-Settings',
+    fillIcon: 'icon-Settings',
+    active: 'icon-Settings'
+  },
+  {
+    name: '文章发布',
+    key: 'create',
+    path: '/create',
+    icon: 'icon-Settings',
+    fillIcon: 'icon-Settings',
+    active: 'icon-Settings'
+  },
+  {
+    name: '实用工具',
+    key: 'tools',
+    path: '/tools',
+    icon: 'icon-Settings',
+    fillIcon: 'icon-Settings',
+    active: 'icon-Settings'
+  },
+  {
+    name: '图片集',
+    key: 'picture',
+    path: '/picture',
+    icon: 'icon-Settings',
+    fillIcon: 'icon-Settings',
+    active: 'icon-Settings'
+  },
+  {
+    name: '关于博主',
+    key: 'author',
+    path: '/setting',
+    icon: 'icon-Settings',
+    fillIcon: 'icon-Settings',
+    active: 'icon-Settings'
   }
 ];
 
@@ -152,3 +195,11 @@ export const IMG_THEME_TYPES = [
     name: '岛屿'
   }
 ];
+
+// 个人网站列表
+export const MY_LINKS = {
+  github: 'icon-flower',
+  juejin: 'icon-flower',
+  weibo: 'icon-flower',
+  other: 'icon-flower'
+};

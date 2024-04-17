@@ -10,6 +10,11 @@ declare interface Window {
     sendInfo: (value: number) => void;
     onTest: (callback: (value: string) => void) => void;
     onGetInfo: (callback: (value: { id: number; title: string }) => void) => void;
+    // 保存主题
+    sendSetTheme: (type: string) => void;
+    sendGetTheme: () => void;
+    sendRemoveTheme: () => void;
+    onGetTheme: (callback: (value: string) => void) => void;
   };
 }
 

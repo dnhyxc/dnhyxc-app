@@ -8,7 +8,7 @@
   <div :class="`header-warp ${checkOS() === 'mac' && 'mac-header-warp'}`">
     <div class="left">
       <Icon icon-name="icon-zjt" class-name="icon-zjt back" @click="goBack" />
-      <div class="title">{{ route.meta.title }}</div>
+      <div class="title">{{ route.meta.info || route.meta.title }}</div>
     </div>
     <div class="right">
       <Icon
@@ -79,6 +79,7 @@ const goBack = () => {
 
     .title {
       margin-left: 5px;
+      font-weight: 700;
     }
   }
 

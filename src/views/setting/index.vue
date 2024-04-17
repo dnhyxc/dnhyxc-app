@@ -11,7 +11,7 @@
         <Account v-if="menu.value === 1" />
         <Profile v-if="menu.value === 2" />
         <System v-if="menu.value === 3" />
-        <Theme v-if="menu.value === 4" />
+        <Theme v-if="menu.value === 4" :current-menu="menu.value" />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -36,26 +36,26 @@ const goBack = () => {
 @import '@/styles/index.scss';
 
 .container {
+  padding: 0 !important;
+
   .border-card {
     @include radius;
     border: none;
     background-color: transparent;
 
     :deep {
-      .el-tabs__header,
-      .el-tabs__nav-wrap,
-      .el-tabs__nav-scroll,
-      .el-tabs__nav {
-        border-top-left-radius: 35px;
-      }
-      .el-tabs__item {
-        &:first-child {
-          border-top-left-radius: 32px;
+      .el-tabs__header {
+        background-color: var(--green-2);
+
+        .el-tabs__item.is-active {
+          background-color: var(--tab-active);
+          // background-color: var(--green-3);
+          border: 1px solid transparent;
         }
       }
 
       .el-tabs__content {
-        height: calc(100vh - 125px);
+        height: calc(100vh - 105px);
         box-sizing: border-box;
         display: flex;
         align-items: center;

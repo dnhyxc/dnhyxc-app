@@ -1,4 +1,4 @@
-import {contextBridge, ipcRenderer} from 'electron';
+import { contextBridge, ipcRenderer } from 'electron';
 
 const sendMethods = {
   sendInfo: (id: number) => {
@@ -13,6 +13,15 @@ const sendMethods = {
   },
   sendWinClose: () => {
     ipcRenderer.send('win-close');
+  },
+  sendSetTheme: (theme: string) => {
+    ipcRenderer.send('set-theme', theme);
+  },
+  sendGetTheme: () => {
+    ipcRenderer.send('get-theme');
+  },
+  sendRemoveTheme: () => {
+    ipcRenderer.send('remove-theme');
   }
 };
 
@@ -26,6 +35,10 @@ const onMethods = {
     // 移除之前添加的一次性监听器
     ipcRenderer.removeAllListeners('info');
     ipcRenderer.on('win-max', (e, status) => cb(status));
+  },
+  onGetTheme: (cb: (theme: string) => void) => {
+    ipcRenderer.removeAllListeners('theme');
+    ipcRenderer.on('get-theme', (e, theme) => cb(theme));
   }
 };
 

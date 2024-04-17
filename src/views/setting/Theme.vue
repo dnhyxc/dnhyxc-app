@@ -40,13 +40,19 @@ import { ref } from 'vue';
 import { modifyTheme } from '@/utils';
 import { THEME_TYPES, IMG_THEME_TYPES } from '@/constant';
 
-const currentTheme = ref<string>('light');
+const currentTheme = ref('');
+
+window.electronApi.sendGetTheme();
+
+window.electronApi.onGetTheme((theme: string) => {
+  currentTheme.value = theme;
+});
 
 // 设置选择的主题
 const changeTheme = (key: string) => {
-  console.log(key, 'key');
   currentTheme.value = key;
   modifyTheme(key);
+  window.electronApi.sendSetTheme(key);
 };
 </script>
 
@@ -55,7 +61,7 @@ const changeTheme = (key: string) => {
 
 .theme-wrap {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 35px;
   padding-left: 3px;
   box-sizing: border-box;
   color: var(--font-1);

@@ -1,13 +1,8 @@
 import { IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG, SNOW, CLOUD, SEA, FRESH, SUN } from '@/constant';
 
-const removeStyle = {
-  '--font-1': '#111'
-};
-
 // 公共字体设置
 const fontStyle = {
-  '--font-1': 'green',
-  // '--font-1': '#252933',
+  '--font-1': '#252933',
   '--font-2': '#515767',
   '--font-3': '#4e5969',
   '--font-4': '#8a919f',
@@ -15,58 +10,84 @@ const fontStyle = {
   '--font-6': '#cacaca'
 };
 
-// 动漫
-const beauty = {
-  '--bg-lg-color1': 'rgba(0, 0, 0, 0.5)',
-  '--bg-lg-color2': 'rgba(0, 0, 0, 0.3)',
-  '--backdrop-filter': 'blur(0)',
-  // 图片背景兼容字体颜色
-  '--font-color': '#fff',
-  '--font-weight': '700',
-  '--h-color': '#61dc00',
-  '--shade-3': 'rgba(255, 255, 255, 0.1)',
-  '--pre-bg-color': 'rgb(255, 255, 255, 0.05)',
-  // editor 代码块颜色
-  '--code-pre-bg': 'rgb(255, 255, 255, 0.05)',
-  '--pre-hover-bg': 'rgb(0, 0, 0, 0.35)',
-  // table 偶数项背景颜色
-  '--table-even-bg': 'rgba(255, 255, 255, 0.1)',
-  '--placeholder-color': '#868686',
-  // loading 背景颜色
-  '--loading-color': 'rgba(0, 0, 0, 0.69)',
-  '--loading-text-color': '#2aff00',
-  '--bg-image-url': `url(${BEAUTY})`,
-  '--login-bg-img': `url(${BEAUTY})`,
-  '--layer-2-2': 'rgb(255, 255, 255, 0.06)',
-  '--card-border': 'rgba(182, 182, 182, 0.5)',
-  '--card-btn-mark': 'rgba(0, 0, 0, 0.5)',
-  '--markdown-function-color': '#fcf168',
-  '--search-border-color': '#a86aa5',
-  '--card-shadow': 'rgba(255, 255, 255, 0.35)',
-  '--scroll-color': 'rgba(209, 209, 209, 0.15)'
+// 图片字体颜色
+const imgFontStyle = {
+  '--font-1': '#fff',
+  '--font-2': '#f2f2f2',
+  '--font-3': '#ebebeb',
+  '--font-4': '#e8e8e8',
+  '--font-5': '#dfdfdf',
+  '--font-6': '#959595'
+};
+
+// 背景图片公共配置
+const imageStyles = {
+  ...imgFontStyle,
+  // 主题背景颜色
+  '--background': 'transparent',
+  '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
+  '--green-1': 'rgb(225, 252, 201, 0.3)',
+  '--tab-active': 'rgba(255, 255, 255, 0.3)'
+};
+
+// 公共属性
+const commonStyle = {
+  '--content-border-bg': 'rgb(237, 242, 232, 0.2)'
+};
+
+// 选择颜色背景移除图片背景属性
+const removeStyle = {
+  ...fontStyle,
+  '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
+  '--bg-image-url': 'none',
+  '--bg-animation': 'none',
+  '--green-1': 'rgb(225, 252, 201, 0.85)',
+  '--tab-active': 'rgba(255, 255, 255, 0.6)'
 };
 
 const themeTypes = {
-  freshGreen: { ...removeStyle },
-  emeraldGreen: { ...removeStyle },
-  electrum: { ...removeStyle },
-  skygray: { ...removeStyle },
-  black: { ...removeStyle },
-  lightcyan: { ...removeStyle },
-  light: { ...removeStyle },
-  colorful: { ...removeStyle },
-  ShaoSiming: { ...fontStyle },
-  lateralFace: { ...fontStyle },
-  beauty: { ...fontStyle, '--bg-image-url': `url(${BEAUTY})` },
-  island: { ...fontStyle },
-  locomotive: { ...fontStyle },
-  snow: { ...fontStyle },
-  danQingHuang: { ...fontStyle },
-  danQingZi: { ...fontStyle },
-  cloud: { ...fontStyle },
-  sea: { ...fontStyle },
-  fresh: { ...fontStyle },
-  sun: { ...fontStyle }
+  // 颜色背景
+  light: { ...removeStyle, '--background': '#fff', '--tab-active': 'rgba(0, 0, 0, 0.1)' },
+  black: { ...removeStyle, ...imgFontStyle, '--background': '#171718', '--green-1': 'rgb(225, 252, 201, 0.5)' },
+  freshGreen: {
+    ...removeStyle,
+    '--background': '#f9fff9',
+    '--tab-active': 'rgba(0, 0, 0, 0.1)'
+  },
+  emeraldGreen: { ...removeStyle, '--background': '#ceeaba' },
+  lightcyan: { ...removeStyle, '--background': '#d7fffe' },
+  danQingHuang: {
+    ...removeStyle,
+    '--bg-image-url': 'linear-gradient(to bottom, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
+    '--bg-img-size': '200% 169%'
+  },
+  electrum: { ...removeStyle, '--background': '#f5f5dc' },
+  skygray: { ...removeStyle, '--background': '#d8e0e6' },
+  danQingZi: { ...removeStyle, '--bg-image-url': 'linear-gradient(to top, #fffeff 0%, #d7fffe 100%)' },
+  colorful: {
+    ...removeStyle,
+    '--bg-image-url': 'linear-gradient(126deg, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
+    '--bg-img-size': '200%',
+    '--bg-animation': 'bgmove 15s infinite'
+  },
+
+  // 图片背景
+  cloud: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${CLOUD})` }, // 云巅
+  beauty: {
+    ...imageStyles,
+    '--bg-image-url': `url(${BEAUTY})`,
+    '--content-border-bg': 'rgb(237, 242, 232, 0.25)',
+    '--green-1': 'rgb(225, 252, 201, 0.1)',
+    '--tab-active': 'rgba(0, 0, 0, 0.25)'
+  }, // 动漫
+  lateralFace: { ...imageStyles, '--bg-image-url': `url(${HEAD_IMG})` }, // 侧脸
+  fresh: { ...imageStyles, '--bg-image-url': `url(${FRESH})` }, // 小清新
+  ShaoSiming: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG1})` }, // 少司命
+  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` }, // 三体智子
+  island: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG4})` }, // 海岛
+  snow: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${SNOW})` }, // 雪山
+  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` }, // 海
+  sun: { ...imageStyles, '--bg-image-url': `url(${SUN})` } // 日出
 };
 
 // 设置背景颜色

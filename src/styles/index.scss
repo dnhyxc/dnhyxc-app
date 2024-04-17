@@ -1,7 +1,41 @@
 @import './color.scss';
 
+// 双击不选中文字
+@mixin clickNoSelectText {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  /* 禁止图片拖拽 */
+  -webkit-user-drag: none;
+}
+
 @mixin textLg($color: $lg-colors) {
   background-image: $color;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin clearTextLg($color: $hover-text-color) {
+  background-image: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: $color;
+}
+
+// hover时的菜单颜色
+@mixin textHoverActive($lg-hover-colors: $lg-hover-colors) {
+  background-image: $lg-hover-colors;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// 选中的菜单颜色
+@mixin textLgActive($lg-active-colors: $lg-active-colors) {
+  background-image: $lg-active-colors;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -32,5 +66,16 @@
   }
   100% {
     background-position: 0% 0%;
+  }
+}
+
+// 图片显示方式
+@mixin imgStyle($time: 0.3s, $position1: top left, $position2: bottom right) {
+  object-fit: cover;
+  object-position: $position1;
+  transition: all $time ease-in-out;
+
+  &:hover {
+    object-position: $position2;
   }
 }

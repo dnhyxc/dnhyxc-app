@@ -1,19 +1,20 @@
 // @ts-ignore
 import path from 'path';
 import { ipcMain, BrowserWindow, IpcMainEvent, app } from 'electron';
-import { globalInfo, PORT } from '../constant';
+import { globalInfo, PORT, DOMAIN } from '../constant';
 import { getIconPath, isMac, isDev } from '../utils';
 
 let timer: ReturnType<typeof setTimeout> | null = null;
 
 export const createMainWindow = () => {
   globalInfo.mainWin = new BrowserWindow({
-    width: 1080,
-    height: 750,
-    minWidth: 1080,
-    minHeight: 750,
+    width: 1050,
+    height: 720,
+    minWidth: 1050,
+    minHeight: 720,
     titleBarStyle: 'hidden',
     webPreferences: {
+      // 禁止渲染进程使用 node api，防止安全问题
       nodeIntegration: false,
       contextIsolation: true, // 这里需要设置为 true， 否则导入 preload.js 会报错
       preload: path.join(__dirname, './preload.js')
@@ -43,7 +44,7 @@ export const createMainWindow = () => {
   }
 
   if (!isDev) {
-    globalInfo.mainWin?.loadURL(`http://localhost:${PORT}`);
+    globalInfo.mainWin?.loadURL(DOMAIN);
   } else {
     globalInfo.mainWin?.webContents.openDevTools();
     globalInfo.mainWin?.loadURL(`http://localhost:${PORT}`);
@@ -84,4 +85,16 @@ ipcMain.on('win-max', (e: IpcMainEvent) => {
 
 ipcMain.on('win-close', () => {
   globalInfo.mainWin?.hide();
+});
+
+ipcMain.on('set-theme', (e: IpcMainEvent, theme: string) => {
+  globalInfo.store?.set('theme', theme);
+});
+
+ipcMain.on('get-theme', (e: IpcMainEvent) => {
+  e.sender.send('get-theme', globalInfo.store?.get('theme'));
+});
+
+ipcMain.on('remove-theme', (e: IpcMainEvent) => {
+  globalInfo.store?.delete('theme');
 });

@@ -1,15 +1,18 @@
 // @ts-ignore
 import path from 'path';
 import { app, Tray } from 'electron';
+import Store from 'electron-store';
 import { createMainWindow } from './windows/main-win';
 import { isDev, isMac, getIconPath, createContextMenu } from './utils';
-import { globalInfo, PORT } from './constant';
+import { globalInfo, DOMAIN } from './constant';
+
+globalInfo.store = new Store();
 
 // 屏蔽警告
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true';
 
 // 解决 http 下无法使用媒体api（navigator.mediaDevices.getUserMedia）的问题
-app.commandLine.appendSwitch('unsafely-treat-insecure-origin-as-secure', `http://localhost:${PORT}`);
+app.commandLine.appendSwitch('unsafely-treat-insecure-origin-as-secure', DOMAIN);
 
 // 限制只能启动一个应用
 const gotTheLock = app.requestSingleInstanceLock();

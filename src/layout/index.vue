@@ -57,6 +57,7 @@ const goBack = () => {
   background-repeat: var(--bg-repeat);
   background-size: var(--bg-img-size);
   animation: var(--bg-animation);
+  overflow: hidden;
 
   .el-main {
     display: flex;
@@ -69,10 +70,11 @@ const goBack = () => {
     .header-warp {
       display: flex;
       align-items: center;
-      padding: 8px 8px 8px 25px;
+      padding: 8px 8px 8px 15px;
       height: 60px;
       box-sizing: border-box;
       -webkit-app-region: drag;
+      color: var(--font-1);
 
       .back {
         -webkit-app-region: no-drag;
@@ -82,44 +84,24 @@ const goBack = () => {
     .content {
       position: relative;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      height: calc(100vh - 60px);
       border-top-left-radius: 35px;
-      border: 5px solid $content-bg;
+      border: 5px solid var(--content-border-bg);
       border-bottom: none;
       border-right: none;
       box-sizing: border-box;
-      padding: 5px 0 0 5px;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        //background-color: $content-bg;
-        //clip-path: polygon(
-        //  -100vmax -100vmax,
-        //  100vmax -100vmax,
-        //  100vmax 100vmax,
-        //  -100vmax 100vmax,
-        //  -100vmax -100vmax,
-        //  6px 6px,
-        //  6px 100%,
-        //  100% 100%,
-        //  100% 6px,
-        //  6px 6px
-        //);
-      }
+      color: var(--font-1);
+      overflow-y: auto;
 
       .page {
-        position: relative;
-        z-index: 99;
         width: 100%;
         height: 100%;
         box-sizing: border-box;
         background-color: transparent;
+        color: var(--font-1);
+        border-top-left-radius: 30px;
+        padding: 5px 15px;
+        overflow-y: auto;
       }
     }
   }
