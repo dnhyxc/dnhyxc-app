@@ -57,36 +57,59 @@ const removeStyle = {
   '--lg-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)',
   '--lg-active-colors': 'linear-gradient(-45deg, #30cfd0 0%, #330867 100%)',
   // 输入框背景
-  '--input-bg-color': '#fff',
+  '--input-bg-color': 'transparent',
   '--search-border-color': '#fff',
-  '--font-color': 'none',
+  '--font-color': '#111',
   '--placeholder-color': '#a8abb2'
 };
 
 const themeTypes = {
   // 颜色背景
-  light: { ...removeStyle, '--background': '#fff', '--tab-active': 'rgba(0, 0, 0, 0.1)' },
-  black: { ...removeStyle, ...imgFontStyle, '--background': '#171718', '--green-1': 'rgb(225, 252, 201, 0.5)' },
+  light: {
+    ...removeStyle,
+    '--background': '#fff',
+    '--tab-active': 'rgba(0, 0, 0, 0.1)',
+    '--search-border-color': '#68a235'
+  },
+  black: {
+    ...removeStyle,
+    ...imgFontStyle,
+    '--background': '#171718',
+    '--green-1': 'rgb(225, 252, 201, 0.5)',
+    '--search-border-color': '#68a235',
+    '--font-color': '#fff',
+  },
   freshGreen: {
     ...removeStyle,
     '--background': '#f9fff9',
-    '--tab-active': 'rgba(0, 0, 0, 0.1)'
+    '--tab-active': 'rgba(0, 0, 0, 0.1)',
+    '--search-border-color': '#68a235'
   },
-  emeraldGreen: { ...removeStyle, '--background': '#ceeaba' },
-  lightcyan: { ...removeStyle, '--background': '#d7fffe' },
+  emeraldGreen: {
+    ...removeStyle,
+    '--background': '#ceeaba',
+    '--search-border-color': '#68a235'
+  },
+  lightcyan: { ...removeStyle, '--background': '#d7fffe', '--search-border-color': '#68a235', '--font-color': '#fff' },
   danQingHuang: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(to bottom, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
-    '--bg-img-size': '200% 169%'
+    '--bg-img-size': '200% 169%',
+    '--search-border-color': '#68a235'
   },
-  electrum: { ...removeStyle, '--background': '#f5f5dc' },
-  skygray: { ...removeStyle, '--background': '#d8e0e6' },
-  danQingZi: { ...removeStyle, '--bg-image-url': 'linear-gradient(to top, #fffeff 0%, #d7fffe 100%)' },
+  electrum: { ...removeStyle, '--background': '#f5f5dc', '--search-border-color': '#68a235', '--font-color': '#fff' },
+  skygray: { ...removeStyle, '--background': '#d8e0e6', '--search-border-color': '#68a235', '--font-color': '#fff' },
+  danQingZi: {
+    ...removeStyle,
+    '--bg-image-url': 'linear-gradient(to top, #fffeff 0%, #d7fffe 100%)',
+    '--search-border-color': '#68a235'
+  },
   colorful: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(126deg, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
     '--bg-img-size': '200%',
-    '--bg-animation': 'bgmove 15s infinite'
+    '--bg-animation': 'bgmove 15s infinite',
+    '--search-border-color': '#68a235'
   },
 
   // 图片背景 云巅
