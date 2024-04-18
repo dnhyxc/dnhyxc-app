@@ -28,23 +28,20 @@ body {
   // 背景动画
   --bg-animation: none;
   --content-border-bg: rgb(237, 242, 232, 0.6);
-  --lg-active-colors: linear-gradient(-45deg, #f3ff00 0%, #377500 100%);
+  --lg-colors: linear-gradient(-45deg, #68a235 0%, #377500 100%);
+  --lg-active-colors: linear-gradient(-45deg, #30cfd0 0%, #330867 100%);
   --green-1: rgb(225, 252, 201, 0.65);
   --green-2: rgba(238, 250, 229, 0.35);
   --green-3: rgb(224, 249, 206, 0.75);
   --tab-active: rgba(0, 0, 0, 0.2);
+  --input-bg-color: #fff;
+  --search-border-color: #fff;
+  --font-color: none;
+  --placeholder-color: #a8abb2;
+  --backdrop-filter: initial;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
   background-color: var(--background);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   width: 100%;
   height: 100%;
 }
@@ -54,57 +51,14 @@ body {
   height: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
+.el-notification {
+  background-color: var(--content-border-bg);
+  border: 1px solid var(--content-border-bg);
+  backdrop-filter: blur(3px);
 
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.card {
-  padding: 2em;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
+  .el-notification__title,
+  .el-notification__content,
+  .el-icon {
+    color: var(--font-1);
   }
 }

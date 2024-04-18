@@ -1,5 +1,5 @@
 export { modifyTheme } from './theme';
-// export { setTheme, getTheme, removeTheme } from './electron-store';
+export { showMessage } from './message';
 
 // 判断系统类型
 export const checkOS = () => {

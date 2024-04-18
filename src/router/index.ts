@@ -47,7 +47,7 @@ export const routes = [
         path: '/tag',
         name: 'tag',
         meta: {
-          title: '文章标签'
+          title: '文章标签云'
         },
         component: () => import('@/views/tag/index.vue')
       },

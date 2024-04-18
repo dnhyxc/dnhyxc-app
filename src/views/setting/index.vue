@@ -49,8 +49,12 @@ const goBack = () => {
 
         .el-tabs__item.is-active {
           background-color: var(--tab-active);
-          // background-color: var(--green-3);
           border: 1px solid transparent;
+          color: var(--active);
+        }
+
+        .el-tabs__item {
+          color: var(--font-1);
         }
       }
 

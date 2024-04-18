@@ -1,6 +1,6 @@
 <template>
   <div class="el-container-wrap">
-    <el-container>
+    <el-container class="content-wrap">
       <LeftMenu />
       <el-main class="el-main">
         <Header />
@@ -57,6 +57,10 @@ const goBack = () => {
   background-size: var(--bg-img-size);
   animation: var(--bg-animation);
   overflow: hidden;
+
+  .content-wrap {
+    backdrop-filter: var(--backdrop-filter);
+  }
 
   .el-main {
     display: flex;

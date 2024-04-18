@@ -24,7 +24,7 @@ const props = withDefaults(defineProps<IProps>(), {
   color: '',
   size: '16px',
   padding: '10px',
-  background: 'var(--content-border-bg)',
+  background: 'var(--green-1)',
   drag: 'no-drag'
 });
 

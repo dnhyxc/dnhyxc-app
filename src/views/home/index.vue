@@ -23,8 +23,10 @@
 </template>
 
 <script setup lang="ts">
-import HelloWorld from '@/components/HelloWorld.vue';
 import { useRouter } from 'vue-router';
+import { commonStore } from '@/store';
+import HelloWorld from '@/components/HelloWorld.vue';
+import { watchEffect } from 'vue';
 
 const router = useRouter();
 
@@ -38,6 +40,10 @@ const onSendMsgToMainWin = () => {
 
 window.electronApi.onGetInfo((value: { id: number; title: string }) => {
   console.log(value, 'onInfo');
+});
+
+watchEffect(() => {
+  console.log(commonStore.keyword, 'keyword');
 });
 </script>
 

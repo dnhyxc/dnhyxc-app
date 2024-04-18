@@ -25,11 +25,19 @@ const imageStyles = {
   ...imgFontStyle,
   // 主题背景颜色
   '--background': 'transparent',
+  '--backdrop-filter': 'blur(2px)',
   '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
   '--bg-img-size': 'cover',
   '--green-1': 'rgb(225, 252, 201, 0.3)',
   '--tab-active': 'rgba(255, 255, 255, 0.3)',
-  '--lg-active-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)'
+  '--lg-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)',
+  '--lg-active-colors': 'linear-gradient(-45deg, #30cfd0 0%, #330867 100%)',
+  // 输入框背景颜色
+  '--input-bg-color': 'transparent',
+  '--search-border-color': '#fff',
+  '--placeholder-color': '#d6d6d6',
+  // 图片背景兼容字体颜色
+  '--font-color': '#fff'
 };
 
 // 公共属性
@@ -40,12 +48,19 @@ const commonStyle = {
 // 选择颜色背景移除图片背景属性
 const removeStyle = {
   ...fontStyle,
+  '--backdrop-filter': 'initial',
   '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
   '--bg-image-url': 'none',
   '--bg-animation': 'none',
   '--green-1': 'rgb(225, 252, 201, 0.85)',
   '--tab-active': 'rgba(255, 255, 255, 0.6)',
-  '--lg-active-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)'
+  '--lg-colors': 'linear-gradient(-45deg, #68a235 0%, #377500 100%)',
+  '--lg-active-colors': 'linear-gradient(-45deg, #30cfd0 0%, #330867 100%)',
+  // 输入框背景
+  '--input-bg-color': '#fff',
+  '--search-border-color': '#fff',
+  '--font-color': 'none',
+  '--placeholder-color': '#a8abb2'
 };
 
 const themeTypes = {
@@ -74,38 +89,80 @@ const themeTypes = {
     '--bg-animation': 'bgmove 15s infinite'
   },
 
-  // 图片背景
+  // 图片背景 云巅
   cloud: {
     ...imageStyles,
     ...fontStyle,
+    '--backdrop-filter': 'blur(1px)',
     '--bg-image-url': `url(${CLOUD})`,
-    '--lg-active-colors': 'linear-gradient(-45deg, #7ab6de 0%, #6e5ef2 100%)'
-  }, // 云巅
+    '--lg-colors': 'linear-gradient(-45deg, #7ab6de 0%, #6e5ef2 100%)',
+    '--font-color': '#000',
+    '--search-border-color': '#7ab6de',
+    '--placeholder-color': '#aeaeae'
+  },
+  // 动漫
   beauty: {
     ...imageStyles,
+    '--backdrop-filter': 'blur(0)',
     '--bg-image-url': `url(${BEAUTY})`,
     '--content-border-bg': 'rgb(237, 242, 232, 0.25)',
     '--green-1': 'rgb(225, 252, 201, 0.1)',
     '--tab-active': 'rgba(0, 0, 0, 0.25)',
-    '--lg-active-colors': 'linear-gradient(-45deg, #f3ff00 0%, #377500 100%)'
+    '--lg-colors': `linear-gradient(45deg,
+      #3f51b1 0%,
+      #5a55ae 13%,
+      #7b5fac 25%,
+      #8f6aae 38%,
+      #a86aa5 50%,
+      #cc6b8e 62%,
+      #f18271 75%,
+      #f3a469 87%,
+      #f7c978 100%)`,
+    '--lg-active-colors': 'linear-gradient(-45deg, #f3ff00 0%, #377500 100%)',
+    '--search-border-color': '#e9ae76',
+    '--placeholder-color': '#868686'
   },
-  // 动漫
+  // 侧脸
   lateralFace: {
     ...imageStyles,
-    '--bg-image-url': `url(${HEAD_IMG})`
-  }, // 侧脸
+    '--bg-image-url': `url(${HEAD_IMG})`,
+    '--lg-colors': 'linear-gradient(-45deg, #00d5ff 0%, #ffffff 100%)',
+    '--font-color': '#fff',
+    '--search-border-color': '#00d5ff'
+  },
+  // 小清新
   fresh: {
     ...imageStyles,
+    '--backdrop-filter': 'blur(1px)',
     '--bg-image-url': `url(${FRESH})`,
-    '--lg-active-colors':
-      'linear-gradient(45deg, #89ff00, #acf500, #c7ea00, #dcdf00, #edd400, #f4c900, #fabd00, #ffb100, #ffa200, #ff9300, #ff8300, #ff7200)'
-  }, // 小清新
-  ShaoSiming: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG1})` }, // 少司命
-  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` }, // 三体智子
-  island: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG4})` }, // 海岛
-  snow: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${SNOW})` }, // 雪山
-  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` }, // 海
-  sun: { ...imageStyles, '--bg-image-url': `url(${SUN})` } // 日出
+    '--lg-colors':
+      'linear-gradient(45deg, #89ff00, #acf500, #c7ea00, #dcdf00, #edd400, #f4c900, #fabd00, #ffb100, #ffa200, #ff9300, #ff8300, #ff7200)',
+    '--search-border-color': '#fabd00',
+    '--placeholder-color': '#d2d2d2'
+  },
+  // 少司命
+  ShaoSiming: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG1})`, '--font-color': '#000' },
+  // 三体智子
+  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` },
+  // 海岛
+  island: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG4})`, '--font-color': '#000' },
+  // 雪山
+  snow: {
+    ...imageStyles,
+    ...fontStyle,
+    '--bg-image-url': `url(${SNOW})`,
+    '--lg-colors': 'linear-gradient(-45deg, #000 0%, #0057cd 100%)',
+    '--font-color': '#000',
+    '--placeholder-color': '#bfbfbf'
+  },
+  // 海
+  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` },
+  // 日出
+  sun: {
+    ...imageStyles,
+    '--bg-image-url': `url(${SUN})`,
+    '--lg-colors': 'linear-gradient(-45deg, #ffffff 0%, #8bd1ff 100%)'
+  }
 };
 
 // 设置背景颜色

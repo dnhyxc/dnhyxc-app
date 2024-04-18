@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4506512 */
-  src: url('iconfont.woff2?t=1713148479329') format('woff2'),
-       url('iconfont.woff?t=1713148479329') format('woff'),
-       url('iconfont.ttf?t=1713148479329') format('truetype');
+  src: url('iconfont.woff2?t=1713430354008') format('woff2'),
+       url('iconfont.woff?t=1713430354008') format('woff'),
+       url('iconfont.ttf?t=1713430354008') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,122 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shibai:before {
+  content: "\e688";
+}
+
+.icon-search:before {
+  content: "\e61b";
+}
+
+.icon-yjt:before {
+  content: "\e699";
+}
+
+.icon-shuaxin:before {
+  content: "\e6a7";
+}
+
+.icon-xiaoxi:before {
+  content: "\e619";
+}
+
+.icon-msg:before {
+  content: "\e615";
+}
+
+.icon-ciyun2:before {
+  content: "\e6fb";
+}
+
+.icon-ciyun1:before {
+  content: "\e872";
+}
+
+.icon-ciyun:before {
+  content: "\e753";
+}
+
+.icon-author:before {
+  content: "\e677";
+}
+
+.icon-gongju:before {
+  content: "\e616";
+}
+
+.icon-juejin-logo:before {
+  content: "\e66b";
+}
+
+.icon-weibo-copy1:before {
+  content: "\e653";
+}
+
+.icon-fankuitianxie:before {
+  content: "\e69c";
+}
+
+.icon-github-fill:before {
+  content: "\e885";
+}
+
+.icon-wangzhi:before {
+  content: "\e620";
+}
+
+.icon-zhihu-circle-fill:before {
+  content: "\ea8b";
+}
+
+.icon-biaoqian:before {
+  content: "\e78b";
+}
+
+.icon-biaoqian1:before {
+  content: "\e614";
+}
+
+.icon-weibiaoti-:before {
+  content: "\e628";
+}
+
+.icon-fenlei:before {
+  content: "\e612";
+}
+
+.icon-bianpinghuatubiaosheji-:before {
+  content: "\e632";
+}
+
+.icon-shijianzhou:before {
+  content: "\e749";
+}
+
+.icon-xiezi_fill:before {
+  content: "\e726";
+}
+
+.icon-shijianzhou-xiangyou-moren:before {
+  content: "\e840";
+}
+
+.icon-xie:before {
+  content: "\e914";
+}
+
+.icon-caidanshouqi:before {
+  content: "\e600";
+}
+
+.icon-caidantanchu:before {
+  content: "\e601";
+}
+
+.icon-caidanshouqi1:before {
+  content: "\e602";
 }
 
 .icon-Settings:before {

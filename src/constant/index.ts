@@ -27,66 +27,112 @@ export const MENU_LIST = [
     name: '文章分类',
     key: 'classify',
     path: '/classify',
-    icon: 'icon-flower',
+    icon: 'icon-fenlei',
     fillIcon: 'icon-flower',
     active: 'icon-flower'
   },
   {
-    name: '文章标签',
+    name: '文章标签云',
     key: 'tag',
     path: '/tag',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-ciyun2',
+    fillIcon: 'icon-ciyun2',
+    active: 'icon-ciyun2'
   },
   {
     name: '时间轴',
     key: 'timeline',
     path: '/timeline',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-shijianzhou',
+    fillIcon: 'icon-shijianzhou',
+    active: 'icon-shijianzhou'
   },
   {
     name: '文章发布',
     key: 'create',
     path: '/create',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-fankuitianxie',
+    fillIcon: 'icon-fankuitianxie',
+    active: 'icon-fankuitianxie'
   },
   {
     name: '实用工具',
     key: 'tools',
     path: '/tools',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-gongju',
+    fillIcon: 'icon-gongju',
+    active: 'icon-gongju'
   },
   {
     name: '图片集',
     key: 'picture',
     path: '/picture',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-hua',
+    fillIcon: 'icon-hua',
+    active: 'icon-hua'
   },
   {
     name: '关于博主',
     key: 'author',
     path: '/setting',
-    icon: 'icon-Settings',
-    fillIcon: 'icon-Settings',
-    active: 'icon-Settings'
+    icon: 'icon-author',
+    fillIcon: 'icon-author',
+    active: 'icon-author'
+  }
+];
+
+// 头部左侧按钮图标
+export const HEADER_LEFT_ACTIONS = [
+  {
+    name: 'icon-zjt',
+    key: 'left',
+    show: 'inline-block'
+  },
+  {
+    name: 'icon-yjt',
+    key: 'right',
+    show: 'inline-block'
+  },
+  {
+    name: 'icon-shuaxin',
+    key: 'reload',
+    show: 'inline-block'
   }
 ];
 
 // 头部操作按钮
-export const HEADER_ACTIONS = {
-  win: 'icon-zxh',
-  max: 'icon-ckzdh',
-  close: 'icon-gb'
-};
+export const HEADER_ACTIONS = [
+  {
+    name: 'icon-search',
+    key: 'search',
+    show: 'inline-block'
+  },
+  {
+    name: 'icon-msg',
+    key: 'msg',
+    show: 'inline-block'
+  },
+  {
+    name: 'icon-setting',
+    key: 'setting',
+    show: 'inline-block'
+  },
+  {
+    name: 'icon-zxh',
+    key: 'win',
+    show: 'none'
+  },
+  {
+    name: 'icon-ckzdh',
+    key: 'max',
+    show: 'none'
+  },
+  {
+    name: 'icon-gb',
+    key: 'close',
+    show: 'none'
+  }
+];
 
 // 设置菜单
 export const SETTING_MENUS = [

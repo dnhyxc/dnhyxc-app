@@ -11,13 +11,23 @@
   -webkit-user-drag: none;
 }
 
-@mixin textLg($color: $lg-colors) {
+// 文字渐变色
+@mixin textLg($color: var(--lg-colors)) {
   background-image: $color;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+// 文字选中的菜单颜色
+@mixin textLgActive($lg-active-colors: var(--lg-active-colors)) {
+  background-image: $lg-active-colors;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// 清除文字渐变色
 @mixin clearTextLg($color: $hover-text-color) {
   background-image: none;
   -webkit-background-clip: initial;
@@ -33,24 +43,19 @@
   color: transparent;
 }
 
-// 选中的菜单颜色
-@mixin textLgActive($lg-active-colors: $lg-active-colors) {
-  background-image: var(--lg-active-colors);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
+// 页面布局圆角
 @mixin radius($r: 35px) {
   border-top-left-radius: $r;
 }
 
+// 背景图片公共样式
 @mixin bgStyles() {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+// 背景动画
 @mixin bgMoveColor($pos: 29deg) {
   background: linear-gradient($pos, #e9defa, #fbfcdb, #a8edea, #e0c3fc, #d1e8f3);
   background-size: 200% 200%;
