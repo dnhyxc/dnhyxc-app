@@ -28,7 +28,7 @@
       >
         <Icon
           :class-name="`${menu.icon} menu-icon`"
-          :padding="`0 ${menuToggle ? '0' : '10px'} 0 0`"
+          :padding="`2px ${menuToggle ? '0' : '10px'} 2px 0`"
           size="20px"
           color="#000"
           background=""
@@ -138,7 +138,7 @@ const onJump = (link: string) => {
       display: flex;
       align-items: center;
       font-size: 15px;
-      padding: 9px 10px;
+      padding: 8px 10px;
       margin-bottom: 3px;
       border-radius: 5px;
       cursor: pointer;
