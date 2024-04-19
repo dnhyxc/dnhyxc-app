@@ -6,9 +6,12 @@
 -->
 <template>
   <div class="container">
-    <div class="action">
-      <el-button type="primary" @click="onSendMsgToMainWin">发送消息给主进程</el-button>
-      <el-button type="success" @click="toDetail">前往详情</el-button>
+    <Carousel />
+    <div class="content">
+      <div class="action">
+        <el-button type="primary" @click="onSendMsgToMainWin">发送消息给主进程</el-button>
+        <el-button type="success" @click="toDetail">前往详情</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +20,7 @@
 import { onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { commonStore } from '@/store';
+import Carousel from "@/components/Carousel.vue";
 
 const router = useRouter();
 
@@ -51,22 +55,15 @@ window.electronApi.onGetInfo((value: { id: number; title: string }) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding: 15px 15px 15px 14px !important;
 
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #21b1ffaa);
-  }
-
-  .logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
+  .content {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
   }
 
   .action {

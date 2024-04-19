@@ -25,6 +25,7 @@ let timer: ReturnType<typeof setTimeout> | null = null;
 
 interface IProps {
   url: string;
+  height?: string;
   urls?: string[];
   onClick?: Function;
   transitionImg?: string;
@@ -35,7 +36,9 @@ interface IProps {
 
 const props = withDefaults(defineProps<IProps>(), {
   urls: () => [],
-  onClick: () => {},
+  height: 'auto',
+  onClick: () => {
+  },
   transitionImg: '',
   needColor: false,
   position: 'top left',
@@ -91,7 +94,7 @@ const onClickImg = () => {
 .image-wrap-style {
   box-sizing: border-box;
   width: 100%;
-  height: auto;
+  height: v-bind(height);
 
   .image-item {
     display: block;
