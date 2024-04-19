@@ -28,7 +28,7 @@
 }
 
 // 清除文字渐变色
-@mixin clearTextLg($color: $hover-text-color) {
+@mixin clearTextLg($color: var(--hover-text-color)) {
   background-image: none;
   -webkit-background-clip: initial;
   background-clip: initial;

@@ -37,7 +37,8 @@ const imageStyles = {
   '--search-border-color': '#fff',
   '--placeholder-color': '#d6d6d6',
   // 图片背景兼容字体颜色
-  '--font-color': '#fff'
+  '--font-color': '#fff',
+  '--hover-text-color': '#c5ff95'
 };
 
 // 公共属性
@@ -60,7 +61,8 @@ const removeStyle = {
   '--input-bg-color': 'transparent',
   '--search-border-color': '#fff',
   '--font-color': '#111',
-  '--placeholder-color': '#a8abb2'
+  '--placeholder-color': '#a8abb2',
+  '--hover-text-color': '#28bd27'
 };
 
 const themeTypes = {
@@ -77,7 +79,7 @@ const themeTypes = {
     '--background': '#171718',
     '--green-1': 'rgb(225, 252, 201, 0.5)',
     '--search-border-color': '#68a235',
-    '--font-color': '#fff',
+    '--font-color': '#fff'
   },
   freshGreen: {
     ...removeStyle,
@@ -90,15 +92,15 @@ const themeTypes = {
     '--background': '#ceeaba',
     '--search-border-color': '#68a235'
   },
-  lightcyan: { ...removeStyle, '--background': '#d7fffe', '--search-border-color': '#68a235', '--font-color': '#fff' },
+  lightcyan: { ...removeStyle, '--background': '#d7fffe', '--search-border-color': '#68a235' },
   danQingHuang: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(to bottom, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
     '--bg-img-size': '200% 169%',
     '--search-border-color': '#68a235'
   },
-  electrum: { ...removeStyle, '--background': '#f5f5dc', '--search-border-color': '#68a235', '--font-color': '#fff' },
-  skygray: { ...removeStyle, '--background': '#d8e0e6', '--search-border-color': '#68a235', '--font-color': '#fff' },
+  electrum: { ...removeStyle, '--background': '#f5f5dc', '--search-border-color': '#68a235' },
+  skygray: { ...removeStyle, '--background': '#d8e0e6', '--search-border-color': '#68a235' },
   danQingZi: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(to top, #fffeff 0%, #d7fffe 100%)',
@@ -121,7 +123,8 @@ const themeTypes = {
     '--lg-colors': 'linear-gradient(-45deg, #7ab6de 0%, #6e5ef2 100%)',
     '--font-color': '#000',
     '--search-border-color': '#7ab6de',
-    '--placeholder-color': '#aeaeae'
+    '--placeholder-color': '#aeaeae',
+    '--hover-text-color': '#28bd27'
   },
   // 动漫
   beauty: {
@@ -145,14 +148,6 @@ const themeTypes = {
     '--search-border-color': '#e9ae76',
     '--placeholder-color': '#868686'
   },
-  // 侧脸
-  lateralFace: {
-    ...imageStyles,
-    '--bg-image-url': `url(${HEAD_IMG})`,
-    '--lg-colors': 'linear-gradient(-45deg, #00d5ff 0%, #ffffff 100%)',
-    '--font-color': '#fff',
-    '--search-border-color': '#00d5ff'
-  },
   // 小清新
   fresh: {
     ...imageStyles,
@@ -163,12 +158,20 @@ const themeTypes = {
     '--search-border-color': '#fabd00',
     '--placeholder-color': '#d2d2d2'
   },
-  // 少司命
-  ShaoSiming: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG1})`, '--font-color': '#000' },
-  // 三体智子
-  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` },
-  // 海岛
-  island: { ...imageStyles, ...fontStyle, '--bg-image-url': `url(${IMG4})`, '--font-color': '#000' },
+  // 侧脸
+  lateralFace: {
+    ...imageStyles,
+    '--bg-image-url': `url(${HEAD_IMG})`,
+    '--lg-colors': 'linear-gradient(-45deg, #00d5ff 0%, #ffffff 100%)',
+    '--font-color': '#fff',
+    '--search-border-color': '#00d5ff'
+  },
+  // 日出
+  sun: {
+    ...imageStyles,
+    '--bg-image-url': `url(${SUN})`,
+    '--lg-colors': 'linear-gradient(-45deg, #ffffff 0%, #8bd1ff 100%)'
+  },
   // 雪山
   snow: {
     ...imageStyles,
@@ -178,14 +181,27 @@ const themeTypes = {
     '--font-color': '#000',
     '--placeholder-color': '#bfbfbf'
   },
-  // 海
-  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` },
-  // 日出
-  sun: {
+  // 少司命
+  ShaoSiming: {
     ...imageStyles,
-    '--bg-image-url': `url(${SUN})`,
-    '--lg-colors': 'linear-gradient(-45deg, #ffffff 0%, #8bd1ff 100%)'
-  }
+    ...fontStyle,
+    '--bg-image-url': `url(${IMG1})`,
+    '--font-color': '#000',
+    '--lg-colors': 'linear-gradient(-45deg, #2f6600 0%, #000000 100%)',
+    '--hover-text-color': '#28bd27'
+  },
+  // 三体智子
+  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` },
+  // 海岛
+  island: {
+    ...imageStyles,
+    ...fontStyle,
+    '--bg-image-url': `url(${IMG4})`,
+    '--font-color': '#000',
+    '--hover-text-color': '#28bd27'
+  },
+  // 海
+  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` }
 };
 
 // 设置背景颜色
