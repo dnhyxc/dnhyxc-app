@@ -103,11 +103,6 @@ export const HEADER_LEFT_ACTIONS = [
 // 头部操作按钮
 export const HEADER_ACTIONS = [
   {
-    name: 'icon-search',
-    key: 'search',
-    show: 'inline-block'
-  },
-  {
     name: 'icon-msg',
     key: 'msg',
     show: 'inline-block'

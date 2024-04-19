@@ -17,11 +17,12 @@
       <div class="title">{{ route.meta.info || route.meta.title }}</div>
     </div>
     <div class="right">
-      <Search margin="0 12px 0 0" />
+      <Search v-if="showSearch" v-model:showSearch="showSearch" margin="0 12px 0 0"/>
+      <Icon v-else class-name="icon-search icon" padding="8px 9px" @click="onShowSearch"/>
       <Icon
         v-for="i in HEADER_ACTIONS"
         :key="i.key"
-        :style="{ display: i.show }"
+        :style="{ display: i.show || (i.show && !showSearch) }"
         :class-name="`${i.key === 'max' && winStatus ? 'icon-ckxh' : i.name} icon`"
         padding="8px 9px"
         @click="onClick(i.key)"
@@ -42,13 +43,14 @@ const router = useRouter();
 const route = useRoute();
 
 const winStatus = ref(false);
+const showSearch = ref(false);
 
 window.electronApi.onWinMax((status: boolean) => {
   winStatus.value = status;
 });
 
-const onSearch = () => {
-  console.log('search');
+const onShowSearch = () => {
+  showSearch.value = true;
 };
 
 const onBack = () => {
@@ -85,7 +87,6 @@ const toSetting = () => {
 
 const onClick = (key: string) => {
   const actions = {
-    search: onSearch,
     left: onBack,
     right: onForward,
     reload: onReload,

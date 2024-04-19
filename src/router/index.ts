@@ -98,9 +98,17 @@ export const routes = [
           title: '个人主页'
         },
         component: () => import('@/views/personal/index.vue')
+      },
+      {
+        path: '/search',
+        name: 'search',
+        meta: {
+          title: '高级搜索'
+        },
+        component: () => import('@/views/search/index.vue')
       }
     ],
-    redirect: { name: 'home' }
+    redirect: {name: 'home'}
   },
   {
     path: '/login',

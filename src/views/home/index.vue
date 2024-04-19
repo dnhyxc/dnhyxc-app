@@ -6,15 +6,6 @@
 -->
 <template>
   <div class="container">
-    <div class="home-wrap">
-      <a href="https://www.electronjs.org/" target="_blank">
-        <img src="@/assets/electron.svg" class="logo" alt="Electron logo" />
-      </a>
-      <a href="https://vuejs.org/" target="_blank">
-        <img src="@/assets/vue.svg" class="logo vue" alt="Vue logo" />
-      </a>
-    </div>
-    <HelloWorld msg="Electron + Vue3 + Template" />
     <div class="action">
       <el-button type="primary" @click="onSendMsgToMainWin">发送消息给主进程</el-button>
       <el-button type="success" @click="toDetail">前往详情</el-button>
@@ -23,12 +14,21 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { commonStore } from '@/store';
-import HelloWorld from '@/components/HelloWorld.vue';
-import { watchEffect } from 'vue';
 
 const router = useRouter();
+
+onMounted(() => {
+  console.log(commonStore.keyword, 'keyword-----onMounted');
+});
+
+watch(() => commonStore.keyword, (newVal, oldVal) => {
+  if (newVal !== oldVal) {
+    console.log(commonStore.keyword, 'keyword-----home');
+  }
+});
 
 const toDetail = () => {
   router.push('/detail/1');
@@ -40,10 +40,6 @@ const onSendMsgToMainWin = () => {
 
 window.electronApi.onGetInfo((value: { id: number; title: string }) => {
   console.log(value, 'onInfo');
-});
-
-watchEffect(() => {
-  console.log(commonStore.keyword, 'keyword');
 });
 </script>
 
