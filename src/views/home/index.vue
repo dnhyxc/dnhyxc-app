@@ -9,7 +9,8 @@
     <Carousel />
     <div class="content">
       <div class="search">
-        <span v-for="menu in HOME_SEARCH_MENU" :key="menu" :class="checkedSearchMenu === menu && 'active-menu'"
+        <span
+v-for="menu in HOME_SEARCH_MENU" :key="menu" :class="checkedSearchMenu === menu && 'active-menu'"
               @click="onSelectMenu(menu)">{{ menu }}</span>
       </div>
       <el-scrollbar height="calc(100vh - 337px)">

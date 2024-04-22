@@ -123,7 +123,7 @@ const onJump = (link: string) => {
 
   .menu-list {
     width: 200px;
-    padding: 0 10px;
+    padding: 0 5px;
     box-sizing: border-box;
     transition: width 0.2s ease;
 
@@ -198,7 +198,7 @@ const onJump = (link: string) => {
   .head {
     position: absolute;
     top: 0;
-    left: 6px;
+    left: 15px;
     width: 55px;
     height: 55px;
     border-radius: 10px;
@@ -208,7 +208,7 @@ const onJump = (link: string) => {
 
   .retract {
     margin-bottom: 15px;
-    margin-left: 10px;
+    margin-left: 5px;
     -webkit-app-region: no-drag;
     @include textLg;
   }
@@ -220,10 +220,9 @@ const onJump = (link: string) => {
     align-items: flex-start;
     justify-content: space-between;
     height: 210px;
-    width: calc(100% - 30px);
+    width: 100%;
     box-sizing: border-box;
-    padding: 65px 0 10px;
-    margin-left: 15px;
+    padding: 65px 10px 10px 15px;
     border-radius: 10px;
     color: var(--font-1);
     overflow: hidden;
@@ -232,7 +231,6 @@ const onJump = (link: string) => {
     .username {
       font-size: 20px;
       font-weight: 700;
-      padding-left: 8px;
       @include textLg;
       cursor: pointer;
       @include clickNoSelectText;
@@ -242,7 +240,6 @@ const onJump = (link: string) => {
       display: flex;
       flex-direction: column;
       position: relative;
-      padding-left: 8px;
       z-index: 9;
       @include textLg;
       @include clickNoSelectText;
@@ -253,8 +250,7 @@ const onJump = (link: string) => {
       justify-content: space-between;
       width: 100%;
       box-sizing: border-box;
-      height: 33px;
-      padding-left: 9px;
+      height: 35px;
       margin-bottom: 6px;
 
       .link-item {
@@ -267,6 +263,23 @@ const onJump = (link: string) => {
         border-radius: 5px;
         margin-right: 8px;
         cursor: pointer;
+        // box-shadow: 0 0 1px #ccc inset;
+
+        &:first-child {
+          border-radius: 5px 18px 5px 5px;
+        }
+
+        &:nth-child(2) {
+          border-radius: 5px 18px 5px 5px;
+        }
+
+        &:nth-child(3) {
+          border-radius: 18px 5px 5px 5px;
+        }
+
+        &:nth-child(4) {
+          border-radius: 18px 5px 5px 5px;
+        }
 
         &:hover {
           .link-icon {

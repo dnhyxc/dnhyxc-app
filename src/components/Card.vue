@@ -13,7 +13,8 @@
           <span @click="onDelete">删除</span>
         </div>
         <div>
-          <div class="desc" title="该项目前台主要采用 `Electron22` + `Electron-store` + `Vite` + `Vue3` + `Vue-Router4` +
+          <div
+            class="desc" title="该项目前台主要采用 `Electron22` + `Electron-store` + `Vite` + `Vue3` + `Vue-Router4` +
             `Typescript` + `Pinia` + `Element-plus` + `Echarts` + `@kangc/v-md-editor` + `Eslint` + `Husky` 等技术框架实现。">
             该项目前台主要采用 `Electron22` + `Electron-store` + `Vite` + `Vue3` + `Vue-Router4` +
             `Typescript` + `Pinia` + `Element-plus` + `Echarts` + `@kangc/v-md-editor` + `Eslint` + `Husky` 等技术框架实现。
@@ -58,12 +59,12 @@ withDefaults(defineProps<IProps>(), {
   width: ''
 });
 
-const toClassify = () => {
-  console.log('classify');
+const toClassify = (classify: string) => {
+  console.log('classify', classify);
 };
 
-const toTag = () => {
-  console.log('tag');
+const toTag = (tag: string) => {
+  console.log('tag', tag);
 };
 </script>
 
