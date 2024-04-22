@@ -26,7 +26,8 @@ const imageStyles = {
   // 主题背景颜色
   '--background': 'transparent',
   '--backdrop-filter': 'blur(2px)',
-  '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
+  '--content-border-bg': 'rgb(225, 252, 201, 0.3)',
+  '--bg-animation': 'none',
   '--bg-img-size': 'cover',
   '--green-1': 'rgb(225, 252, 201, 0.3)',
   '--tab-active': 'rgba(255, 255, 255, 0.3)',
@@ -38,7 +39,8 @@ const imageStyles = {
   '--placeholder-color': '#d6d6d6',
   // 图片背景兼容字体颜色
   '--font-color': '#fff',
-  '--hover-text-color': '#c5ff95'
+  '--hover-text-color': '#c5ff95',
+  '--content-bg': 'rgb(237, 242, 232, 0.2)'
 };
 
 // 公共属性
@@ -50,7 +52,7 @@ const commonStyle = {
 const removeStyle = {
   ...fontStyle,
   '--backdrop-filter': 'initial',
-  '--content-border-bg': 'rgb(237, 242, 232, 0.6)',
+  '--content-border-bg': 'rgb(225, 252, 201, 0.85)',
   '--bg-image-url': 'none',
   '--bg-animation': 'none',
   '--green-1': 'rgb(225, 252, 201, 0.85)',
@@ -62,7 +64,8 @@ const removeStyle = {
   '--search-border-color': '#fff',
   '--font-color': '#111',
   '--placeholder-color': '#a8abb2',
-  '--hover-text-color': '#28bd27'
+  '--hover-text-color': '#28bd27',
+  '--content-bg': 'rgb(237, 242, 232, 0.6)'
 };
 
 const themeTypes = {
@@ -78,8 +81,10 @@ const themeTypes = {
     ...imgFontStyle,
     '--background': '#171718',
     '--green-1': 'rgb(225, 252, 201, 0.5)',
+    '--content-border-bg': 'rgb(225, 252, 201, 0.5)',
     '--search-border-color': '#68a235',
-    '--font-color': '#fff'
+    '--font-color': '#fff',
+    '--content-bg': 'rgb(237, 242, 232, 0.05)'
   },
   freshGreen: {
     ...removeStyle,
@@ -92,15 +97,15 @@ const themeTypes = {
     '--background': '#ceeaba',
     '--search-border-color': '#68a235'
   },
-  lightcyan: { ...removeStyle, '--background': '#d7fffe', '--search-border-color': '#68a235' },
+  lightcyan: {...removeStyle, '--background': '#d7fffe', '--search-border-color': '#68a235'},
   danQingHuang: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(to bottom, #e0c3fc, #d7fffe, #f9fff9, #f8fded, #f9fff9, #d7fffe, #f5ccec)',
     '--bg-img-size': '200% 169%',
     '--search-border-color': '#68a235'
   },
-  electrum: { ...removeStyle, '--background': '#f5f5dc', '--search-border-color': '#68a235' },
-  skygray: { ...removeStyle, '--background': '#d8e0e6', '--search-border-color': '#68a235' },
+  electrum: {...removeStyle, '--background': '#f5f5dc', '--search-border-color': '#68a235'},
+  skygray: {...removeStyle, '--background': '#d8e0e6', '--search-border-color': '#68a235'},
   danQingZi: {
     ...removeStyle,
     '--bg-image-url': 'linear-gradient(to top, #fffeff 0%, #d7fffe 100%)',
@@ -119,7 +124,7 @@ const themeTypes = {
     ...imageStyles,
     ...fontStyle,
     '--backdrop-filter': 'blur(1px)',
-    '--bg-image-url': `url(${CLOUD})`,
+    '--bg-image-url': `url(${ CLOUD })`,
     '--lg-colors': 'linear-gradient(-45deg, #7ab6de 0%, #6e5ef2 100%)',
     '--font-color': '#000',
     '--search-border-color': '#7ab6de',
@@ -130,8 +135,9 @@ const themeTypes = {
   beauty: {
     ...imageStyles,
     '--backdrop-filter': 'blur(0)',
-    '--bg-image-url': `url(${BEAUTY})`,
-    '--content-border-bg': 'rgb(237, 242, 232, 0.25)',
+    '--bg-image-url': `url(${ BEAUTY })`,
+    '--content-border-bg': 'rgb(225, 252, 201, 0.1)',
+    '--content-bg': 'rgb(225, 252, 201, 0.1)',
     '--green-1': 'rgb(225, 252, 201, 0.1)',
     '--tab-active': 'rgba(0, 0, 0, 0.25)',
     '--lg-colors': `linear-gradient(45deg,
@@ -152,16 +158,17 @@ const themeTypes = {
   fresh: {
     ...imageStyles,
     '--backdrop-filter': 'blur(1px)',
-    '--bg-image-url': `url(${FRESH})`,
+    '--bg-image-url': `url(${ FRESH })`,
     '--lg-colors':
       'linear-gradient(45deg, #89ff00, #acf500, #c7ea00, #dcdf00, #edd400, #f4c900, #fabd00, #ffb100, #ffa200, #ff9300, #ff8300, #ff7200)',
     '--search-border-color': '#fabd00',
-    '--placeholder-color': '#d2d2d2'
+    '--placeholder-color': '#d2d2d2',
+    '--content-bg': 'rgb(237, 242, 232, 0.15)'
   },
   // 侧脸
   lateralFace: {
     ...imageStyles,
-    '--bg-image-url': `url(${HEAD_IMG})`,
+    '--bg-image-url': `url(${ HEAD_IMG })`,
     '--lg-colors': 'linear-gradient(-45deg, #00d5ff 0%, #ffffff 100%)',
     '--font-color': '#fff',
     '--search-border-color': '#00d5ff'
@@ -169,14 +176,14 @@ const themeTypes = {
   // 日出
   sun: {
     ...imageStyles,
-    '--bg-image-url': `url(${SUN})`,
-    '--lg-colors': 'linear-gradient(-45deg, #ffffff 0%, #8bd1ff 100%)'
+    '--bg-image-url': `url(${ SUN })`,
+    '--lg-colors': 'linear-gradient(-45deg, #ffffff 0%, #8bd1ff 100%)',
   },
   // 雪山
   snow: {
     ...imageStyles,
     ...fontStyle,
-    '--bg-image-url': `url(${SNOW})`,
+    '--bg-image-url': `url(${ SNOW })`,
     '--lg-colors': 'linear-gradient(-45deg, #000 0%, #0057cd 100%)',
     '--font-color': '#000',
     '--placeholder-color': '#bfbfbf'
@@ -185,23 +192,24 @@ const themeTypes = {
   ShaoSiming: {
     ...imageStyles,
     ...fontStyle,
-    '--bg-image-url': `url(${IMG1})`,
+    '--bg-image-url': `url(${ IMG1 })`,
     '--font-color': '#000',
     '--lg-colors': 'linear-gradient(-45deg, #2f6600 0%, #000000 100%)',
-    '--hover-text-color': '#28bd27'
+    '--hover-text-color': '#28bd27',
   },
   // 三体智子
-  locomotive: { ...imageStyles, '--bg-image-url': `url(${IMG3})` },
+  locomotive: {...imageStyles, '--bg-image-url': `url(${ IMG3 })`},
   // 海岛
   island: {
     ...imageStyles,
     ...fontStyle,
-    '--bg-image-url': `url(${IMG4})`,
+    '--bg-image-url': `url(${ IMG4 })`,
     '--font-color': '#000',
-    '--hover-text-color': '#28bd27'
+    '--hover-text-color': '#28bd27',
+    '--content-bg': 'rgb(237, 242, 232, 0.5)'
   },
   // 海
-  sea: { ...imageStyles, '--bg-image-url': `url(${SEA})` }
+  sea: {...imageStyles, '--bg-image-url': `url(${ SEA })`}
 };
 
 // 设置背景颜色

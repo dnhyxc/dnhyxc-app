@@ -149,6 +149,9 @@ export const SETTING_MENUS = [
   }
 ];
 
+// 首页搜索菜单
+export const HOME_SEARCH_MENU = ['推荐文章', '热门文章'];
+
 // 主题类型
 export const THEME_TYPES = [
   {
@@ -239,8 +242,8 @@ export const IMG_THEME_TYPES = [
 
 // 个人网站列表
 export const MY_LINKS = {
-  github: 'icon-flower',
-  juejin: 'icon-flower',
-  weibo: 'icon-flower',
-  other: 'icon-flower'
+  github: 'icon-github-fill',
+  juejin: 'icon-juejinlianmengapp-',
+  weibo: 'icon-weibo-copy1',
+  other: 'icon-zhihu-circle-fill'
 };

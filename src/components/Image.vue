@@ -8,7 +8,7 @@
   <div class="image-wrap-style" @click="onClickImg">
     <img v-if="url" ref="imgRef" :src="loaded ? loadUrl : transitionImg" alt="" class="image-item" @error="onError" />
     <div v-if="!url" class="loading-img">
-      <img v-if="transitionImg" :src="transitionImg" alt="" class="image-item" />
+      <img v-if="transitionImg" :src="transitionImg" alt="" :class="className" />
       <div v-else class="loading">loading...</div>
     </div>
     <img v-for="i in urls" v-show="urls?.length! > 0" :key="i" :src="i" alt="" class="image-item" />
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, watchEffect, onUnmounted } from 'vue';
+import { ref, onMounted, watchEffect, onUnmounted, computed } from 'vue';
 
 const loadUrl = ref<string | undefined>('');
 const loaded = ref<boolean>(false);
@@ -32,6 +32,7 @@ interface IProps {
   needColor?: boolean;
   position?: string;
   radius?: string;
+  className?: string;
 }
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -42,8 +43,13 @@ const props = withDefaults(defineProps<IProps>(), {
   transitionImg: '',
   needColor: false,
   position: 'top left',
-  radius: ''
+  radius: '',
+  className: ''
 });
+
+console.log(props.className, 'className');
+
+const className = computed(() => props.className + 'image-item');
 
 onMounted(() => {
   watchEffect(() => {

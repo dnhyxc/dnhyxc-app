@@ -4,7 +4,7 @@ export const showMessage = ({
   title,
   message,
   type = 'success',
-  duration = 2000,
+  duration = 1500,
   offset = 65,
   onClose
 }: {

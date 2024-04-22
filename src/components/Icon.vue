@@ -16,6 +16,7 @@ interface IProps {
   color?: string;
   size?: string;
   padding?: string;
+  margin?: string;
   background?: string;
   drag?: string;
 }
@@ -24,13 +25,14 @@ const props = withDefaults(defineProps<IProps>(), {
   color: '',
   size: '16px',
   padding: '10px',
+  margin: '0',
   background: 'var(--green-1)',
   drag: 'no-drag'
 });
 
 // 图标在 iconfont 中的名字
 const className = computed(() => {
-  return `icon iconfont ${props.className}`;
+  return `icon iconfont ${ props.className }`;
 });
 </script>
 
@@ -38,14 +40,15 @@ const className = computed(() => {
 @import '@/styles/index.scss';
 
 .icon {
-  font-size: v-bind('props.size');
-  padding: v-bind('props.padding');
+  font-size: v-bind(size);
+  padding: v-bind(padding);
+  margin: v-bind(margin);
   cursor: pointer;
   border-radius: 5px;
-  -webkit-app-region: v-bind('props.drag');
+  -webkit-app-region: v-bind(drag);
 
   &:hover {
-    background: v-bind('props.background');
+    background: v-bind(background);
     color: var(--active);
   }
 }

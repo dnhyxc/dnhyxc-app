@@ -7,7 +7,7 @@
 <template>
   <div class="carousel-container">
     <div class="carousel-list">
-      <el-carousel height="200px" motion-blur trigger="click">
+      <el-carousel height="200px" motion-blur trigger="click" :interval="5000">
         <el-carousel-item v-for="item in imgs" :key="item">
           <Image :url="item" height="200px" radius="10px" />
         </el-carousel-item>
@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG, SNOW, CLOUD, SEA, FRESH, SUN } from '@/constant';
-import Image from "@/components/Image.vue";
+import Image from '@/components/Image.vue';
 
 const imgs = [IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG];
 </script>
@@ -36,10 +36,10 @@ const imgs = [IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG];
   align-items: center;
   width: 100%;
   border-radius: 16px 10px 10px;
-  margin-bottom: 15px;
+  box-sizing: border-box;
 
   .carousel-list {
-    flex: 0.7;
+    flex: 3;
     margin-right: 15px;
     border-radius: 16px 10px 10px;
     box-shadow: 0 0 1px #ccc;
@@ -52,7 +52,7 @@ const imgs = [IMG1, BEAUTY, IMG3, IMG4, HEAD_IMG];
   }
 
   .card-list {
-    flex: 0.3;
+    flex: 1.5;
     height: 200px;
     border-radius: 10px;
     box-shadow: 0 0 1px #ccc;

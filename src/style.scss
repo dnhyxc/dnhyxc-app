@@ -38,8 +38,8 @@ body {
   --search-border-color: #fff;
   --font-color: none;
   --placeholder-color: #a8abb2;
-  --backdrop-filter: initial;
   --hover-text-color: #c5ff95;
+  --content-bg: rgb(237, 242, 232, 0.6);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   background-color: var(--background);
@@ -59,7 +59,7 @@ body {
 
   .el-notification__title,
   .el-notification__content,
-  .el-icon {
+  .el-notification__closeBtn {
     color: var(--font-1);
   }
 }

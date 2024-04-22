@@ -84,3 +84,22 @@
     object-position: $position2;
   }
 }
+
+@mixin ellipsisMore($count) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: $count;
+  word-break: break-all;
+  line-clamp: $count;
+  vertical-align: middle;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

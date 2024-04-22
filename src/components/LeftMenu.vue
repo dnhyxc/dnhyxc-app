@@ -52,12 +52,14 @@
         <span>未来不负时光所期</span>
       </div>
       <div class="link">
-        <Icon
-          v-for="link in ['github', 'juejin', 'weibo', 'other']"
-          :key="link"
-          :class-name="`${MY_LINKS[link]} link-icon`"
-          @click="onJump(link)"
-        />
+        <div v-for="link in ['github', 'juejin', 'weibo', 'other']" :key="link" class="link-item" @click="onJump(link)">
+          <Icon
+            :class-name="`${MY_LINKS[link]} link-icon`"
+            size="20px"
+            padding="0"
+            background=""
+          />
+        </div>
       </div>
     </div>
   </el-aside>
@@ -108,6 +110,16 @@ const onJump = (link: string) => {
   justify-content: space-between;
   color: var(--font-1);
   -webkit-app-region: drag;
+
+  //&::after {
+  //  content: '';
+  //  position: absolute;
+  //  bottom: 0;
+  //  height: 200px;
+  //  width: 200px;
+  //  border-radius: 180px 0 0 0;
+  //  background: var(--green-1);
+  //}
 
   .menu-list {
     width: 200px;
@@ -207,13 +219,12 @@ const onJump = (link: string) => {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    height: 200px;
+    height: 210px;
     width: calc(100% - 30px);
     box-sizing: border-box;
     padding: 65px 0 10px;
-    margin-bottom: 15px;
     margin-left: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
     color: var(--font-1);
     overflow: hidden;
     -webkit-app-region: no-drag;
@@ -238,39 +249,58 @@ const onJump = (link: string) => {
     }
 
     .link {
-      position: relative;
-      z-index: 9;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      height: 33px;
+      padding-left: 9px;
+      margin-bottom: 6px;
+
+      .link-item {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--green-1);
+        height: 100%;
+        border-radius: 5px;
+        margin-right: 8px;
+        cursor: pointer;
+
+        &:hover {
+          .link-icon {
+            @include clearTextLg();
+          }
+        }
+      }
 
       .link-icon {
         @include textLg;
-
-        &:hover {
-          @include clearTextLg();
-        }
       }
     }
 
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: -10%;
-      left: -15%;
-      width: 60px;
-      height: 60px;
-      border-radius: 150px;
-      background-color: var(--green-1);
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      right: -30%;
-      width: 130px;
-      height: 130px;
-      border-radius: 130px;
-      background-color: var(--green-1);
-    }
+    //&::before {
+    //  content: '';
+    //  position: absolute;
+    //  bottom: -10%;
+    //  left: -15%;
+    //  width: 60px;
+    //  height: 60px;
+    //  border-radius: 150px;
+    //  background-color: var(--green-1);
+    //}
+    //
+    //&::after {
+    //  content: '';
+    //  position: absolute;
+    //  bottom: -30%;
+    //  right: -30%;
+    //  width: 130px;
+    //  height: 130px;
+    //  border-radius: 130px;
+    //  background-color: var(--green-1);
+    //}
   }
 }
 

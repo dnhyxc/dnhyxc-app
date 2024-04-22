@@ -17,8 +17,8 @@
       <div class="title">{{ route.meta.info || route.meta.title }}</div>
     </div>
     <div class="right">
-      <Search v-if="showSearch" v-model:showSearch="showSearch" margin="0 12px 0 0"/>
-      <Icon v-else class-name="icon-search icon" padding="8px 9px" @click="onShowSearch"/>
+      <Search v-if="showSearch" v-model:showSearch="showSearch" margin="0 12px 0 0" />
+      <Icon v-else class-name="icon-search icon" padding="8px 9px" @click="onShowSearch" />
       <Icon
         v-for="i in HEADER_ACTIONS"
         :key="i.key"
@@ -116,6 +116,7 @@ const goBack = () => {
     display: flex;
     align-items: center;
     @include textLg;
+    margin-left: -12px;
 
     .title {
       margin-left: 14px;
@@ -124,6 +125,7 @@ const goBack = () => {
   }
 
   .right {
+    position: relative;
     flex: 1;
     display: flex;
     align-items: center;

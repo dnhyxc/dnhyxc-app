@@ -63,6 +63,7 @@ const goBack = () => {
   }
 
   .el-main {
+    position: relative;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -73,7 +74,7 @@ const goBack = () => {
     .header-warp {
       display: flex;
       align-items: center;
-      padding: 8px 8px 8px 15px;
+      padding: 8px 8px 8px 12px;
       height: 60px;
       box-sizing: border-box;
       -webkit-app-region: drag;
@@ -88,13 +89,14 @@ const goBack = () => {
       position: relative;
       width: 100%;
       height: calc(100vh - 60px);
-      border-top-left-radius: 35px;
-      border: 5px solid var(--content-border-bg);
+      border-top-left-radius: 30px;
+      border: 1px solid var(--content-border-bg);
       border-bottom: none;
       border-right: none;
       box-sizing: border-box;
       color: var(--font-1);
       overflow-y: auto;
+      background: var(--content-bg);
 
       .page {
         width: 100%;
